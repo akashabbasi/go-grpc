@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package pb;
+
+import "user.proto";
+
+option go_package = "github.com/akashabbasi/go-grpc/server/pb";
+
+message GetUserResponse {
+  User user = 1;
+}

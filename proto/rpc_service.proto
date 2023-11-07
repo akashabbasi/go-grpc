@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/akashabbasi/server/pb";
+
+import "empty_request.proto";
+import "rpc_login.proto";
+import "rpc_signup.proto";
+import "rpc_get_user.proto";
+
+service GrpcServerService {
+  rpc Signup(SignupRequestMessage) returns (SignupResponseMessage) {};
+  rpc Login(LoginRequestMessage) returns (LoginResponseMessage) {};
+  rpc GetUser(EmptyRequest) returns (GetUserResponse) {};
+}
+
+message EmptyResponse {}
